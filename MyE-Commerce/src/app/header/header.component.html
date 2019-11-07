@@ -1,0 +1,38 @@
+<div 
+    class="header-body" 
+    fxLayout="column"
+    fxLayoutGap='20px'
+>
+    <div 
+        fxFill 
+        fxLayout="row" 
+        class="header-title"
+        fxLayoutAlign="center center" 
+    >
+    <a href="https://fontmeme.com/unearth-game-font/"><img src="https://fontmeme.com/permalink/191106/a35a6ec77368c22526494fdc697d0cf8.png" alt="unearth-game-font" border="0"></a>
+    </div>
+
+    <div fxLayout="row">
+        <div 
+            fxFlex="auto" 
+            fxLayout="row" 
+            fxLayoutAlign="center center" 
+            fxLayoutGap='40px'
+            class="header-buttons"
+        >
+            <a>Home</a>
+            <a>Shop</a>
+
+        </div>
+        <div 
+            fxFlex="10"
+            fxLayoutGap='10px'
+            fxLayoutAlign="center flex-end"
+        >
+     
+            <a (click)="openShopDialog()"  alt="Seu Carrinho">
+                <mat-icon matBadge="{{itens}}" matBadgeColor="warn" style="color: grey; font-size: 35px;">add_shopping_cart</mat-icon>
+            </a>
+        </div>
+    </div>
+</div>

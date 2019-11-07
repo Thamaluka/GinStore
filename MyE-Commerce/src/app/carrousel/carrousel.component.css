@@ -1,0 +1,16 @@
+.seller-body {
+  margin: 20px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+
+a {
+ cursor: pointer;
+}
+
+p {
+  text-align: center;
+}

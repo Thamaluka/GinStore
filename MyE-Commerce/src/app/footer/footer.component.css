@@ -1,0 +1,11 @@
+.footer-body {
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+p {
+  color: white;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}

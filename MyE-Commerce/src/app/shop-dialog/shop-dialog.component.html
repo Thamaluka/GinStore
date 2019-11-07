@@ -1,0 +1,90 @@
+<p>Seu Carrinho</p>
+
+<mat-horizontal-stepper [linear]=false #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Seus produtos</ng-template>
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" *ngFor="let item of productList">
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="60">
+                    <img src="{{item.img}}" width="100" />
+                    <div>{{item.name}}</div>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div>{{item.value}}</div>
+                </div>
+
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="flex-end center" style="margin-top: 40px;">
+                <button mat-button (click)="onNoClick()">Cancelar</button>
+                <button mat-raised-button color="primary" matStepperNext>Continuar</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Seus Dados</ng-template>
+
+            <div fxLayout="column" fxLayoutAlign="center">
+                <mat-form-field>
+                    <input matInput placeholder="Nome" formControlName="secondCtrl" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Sobrenome" formControlName="secondCtrl" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="secondCtrl" required>
+                    <!--  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                </mat-form-field>
+
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <mat-form-field fxFlex="55">
+                        <input matInput placeholder="Rua" formControlName="secondCtrl" required>
+                    </mat-form-field>
+                    <mat-form-field fxFlex="25">
+                        <input matInput placeholder="Número" formControlName="secondCtrl" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <mat-form-field fxFlex="55">
+                        <input matInput placeholder="Cidade" formControlName="secondCtrl" required>
+                    </mat-form-field>
+                    <mat-form-field fxFlex="25">
+                        <input matInput placeholder="Estado" formControlName="secondCtrl" required>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+
+            <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap='20px' style="margin-top: 40px;">
+                <button mat-button (click)="onNoClick()">Cancelar</button>
+                <button mat-raised-button color="primary" matStepperPrevious>Voltar</button>
+                <button mat-raised-button color="primary" matStepperNext>Continuar</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Pagamento</ng-template>
+        You are now done.
+        <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap='20px' style="margin-top: 40px;">
+            <button mat-button (click)="onNoClick()">Cancelar</button>
+            <button mat-raised-button color="primary" matStepperPrevious>Voltar</button>
+            <button mat-raised-button color="primary" matStepperNext>Continuar</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Confirmação</ng-template>
+        <div fxLayout="row" fxLayoutAlign="center" style="font-size: 30px; margin:30px;">Pagamento eviado com sucesso!!
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center">Seu gin Gin" fxLayoutGap='20px' style="margin-top: 40px;">
+            <button mat-raised-button color="primary" (click)="onNoClick()">Fechar</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

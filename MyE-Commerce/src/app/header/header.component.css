@@ -1,0 +1,15 @@
+.header-body {
+  height: 150px;
+}
+
+.header-title {
+  font-size: 30px;
+}
+
+a {
+  font-size: 12px;
+}
+
+.header-buttons {
+    margin-left: 10%;
+}

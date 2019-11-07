@@ -1,0 +1,26 @@
+<div class="seller-body" fxLayoutAlign="start center">
+</div>
+
+<mat-grid-list cols="4">
+
+    <mat-grid-tile class="product-img" *ngFor="let item of list">
+        <mat-card class="example-card">
+            <img mat-card-image src="{{item.img}}" width="360" height="300">
+            <mat-card-content fxLayout="column" fxLayoutGap='10px'>
+                <p>{{item.name}}</p>
+                <p>{{item.detalhes}}</p>
+                <p style="color: #e91e63;"><b>{{item.value}}</b></p>
+            </mat-card-content>
+            <mat-card-actions>
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <button mat-raised-button color="primary">Comprar</button>
+                    <a (click)="addItemToShopCar(item)">
+                        <mat-icon *ngIf="!item.cliked" style="color: grey">add_shopping_cart</mat-icon>
+                    </a>
+                    <mat-icon *ngIf="item.cliked" style="color: green">check</mat-icon>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+
+</mat-grid-list>
